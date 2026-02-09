@@ -41,7 +41,7 @@ bird_velocity = 0
 gravity = 1
 jump = -11
 # Pipe Variables -->
-pipe_x = 600
+pipe_x = 650
 pipe_width = 70
 # TODO 2.1: A Little gap Problem
 # You probably noticed when running the code that it's impossible the player to go through the gaps
