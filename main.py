@@ -63,7 +63,7 @@ running = True
 while running:
     # TODO 6: Changing the name!
     # D'oh! This is not yout name isn't follow the detailed instructions on the PDF to complete this task.
-    name = "Homer Simpson"
+    name = "Ian Crespo"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -80,6 +80,7 @@ while running:
                     # It is your job to find why this is happening! (Hint: What variable stores the y coordinates
                     # of the bird)
                     bird_velocity = 0
+                    bird_y = 300
                     pipe_x = 400
                     score = 0
                     game_over = False
