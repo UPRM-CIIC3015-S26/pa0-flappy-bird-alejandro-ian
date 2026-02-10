@@ -14,16 +14,16 @@ The project is designed as an introductory programming assignment (PA0). Most of
 ## 👥 Team Information
 
 ### Partner #1
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Name:** Alejandro E. Ortiz Noriega
+- **Student Number:** 802-25-6149
+- **Email:** alejandro.ortiz25@gmail.com
 
 ### Partner #2
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Name:** Ian J. Crespo Guzmán
+- **Student Number:** 844-23-2780
+- **Email:** ian.crespo2@upr.edu
 
 ## ⭐ Bonus Features (Optional)
 List and briefly describe any additional features or enhancements implemented beyond the basic requirements.
-- Bonus Feature 1
-- Bonus Feature 2
+- Bonus Feature 1: Added extra sound effects
+- Bonus Feature 2: Added the actual Flappy Bird and Flappy Bird Background
