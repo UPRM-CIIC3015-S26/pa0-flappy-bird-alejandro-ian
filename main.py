@@ -1,5 +1,7 @@
 import pygame, random
 pygame.init()
+pygame.mixer.init()
+
 '''
 Welcome to PA0 – Flappy Bird! Throughout this code, you are going to find a recreation of a game you have probably
 heard of before. This is an introductory assignment designed to help you familiarize yourself with what you can expect 
@@ -36,6 +38,13 @@ score_y = 10
 bird_x = 50
 bird_y = 300
 bird_velocity = 0
+
+# Sound Effects -->
+point = pygame.mixer.Sound("point.mp3")
+hit_sound = pygame.mixer.Sound("flappy-bird-hit-sound.mp3")
+die = pygame.mixer.Sound("die.mp3")
+flap = pygame.mixer.Sound("flap.mp3")
+
 # TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
 gravity = 1
@@ -51,7 +60,7 @@ pipe_height = random.randint(100, 400)
 # TODO 2.2: The too fast problem
 # The pipes are moving way too fast! Play around with the pipe_speed variable until you find a good
 # speed for the player to play in!
-pipe_speed = 10
+pipe_speed = 6.7
 
 score = 0
 game_over = False
@@ -72,8 +81,10 @@ while running:
                 if game_started == False:
                     game_started = True
                     bird_velocity = jump
+                    flap.play()
                 elif game_over == False:
                     bird_velocity = jump
+                    flap.play()
                 else:
                     # TODO 3: Spawning back the Player
                     # After the bird crashes with a pipe the when spawning back the player it doesn't appear.
@@ -99,9 +110,12 @@ while running:
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
             score += 1
+            point.play()
+
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
+            die.play()
 
         bird_rect = pygame.Rect(bird_x, bird_y, 30, 30)
         top_pipe_rect = pygame.Rect(pipe_x, 0, pipe_width, pipe_height)
@@ -109,6 +123,7 @@ while running:
 
         if bird_rect.colliderect(top_pipe_rect) or bird_rect.colliderect(bottom_pipe_rect):
             game_over = True
+            hit_sound.play()
 
     screen.fill(pygame.Color('grey12'))
     # TODO 5: A Bird's Color
